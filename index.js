@@ -7,7 +7,7 @@ function DevBuilder(options) {
   this.outLoc = options.outLoc;
   this.logPrefix = options.logPrefix || 'jspm-dev';
   this.jspm = options.jspm || require('jspm');
-  this.builder = new this.jspm.Builder();
+  this.builder = new this.jspm.Builder(options.baseURL, options.configFile);
   this.buildOptions = _.extend({
     sfx: false,
     minify: false,
